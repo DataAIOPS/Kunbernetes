@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: house-price-kube
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: house-price-kube
+  template:
+    metadata:
+      labels:
+        app: house-price-kube
+    spec:
+      containers:
+      - name: house-price-kube
+        image: dataaiopshub/model_image_test
+        ports:
+        - containerPort: 5000
