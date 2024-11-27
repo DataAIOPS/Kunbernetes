@@ -264,19 +264,19 @@ nano deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: house-price-api
+  name: house-price-kube
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: house-price-api
+      app: house-price-kube
   template:
     metadata:
       labels:
-        app: house-price-api
+        app: house-price-kube
     spec:
       containers:
-      - name: house-price-api
+      - name: house-price-kube
         image: dataaiopshub/model_image
         ports:
         - containerPort: 5000
@@ -291,10 +291,10 @@ nano service.yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: house-price-api
+  name: house-price-kube
 spec:
   selector:
-    app: house-price-api
+    app: house-price-kube
   ports:
     - protocol: TCP
       port: 80
@@ -312,7 +312,7 @@ kubectl get svc
 
 Step 11: Port forwarding
 ```ruby
-kubectl port-forward service/house-price-api 8080:80
+kubectl port-forward service/house-price-kube 8080:80
 ```
 
 Step 12: Access curl
