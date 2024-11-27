@@ -214,7 +214,6 @@ Step 5: test flask application
 python app.py
 ```
 ```ruby
-curl -X POST -H "Content-Type: application/json" -d '{"area":1000,"bedrooms":2,"stories":1,"mainroad":"yes","basement":"no"}' http://localhost:5000/predict
 
 curl -X POST -H "Content-Type: application/json" -d "{\"area\":1000,\"bedrooms\":2,\"stories\":1,\"mainroad\":\"yes\",\"basement\":\"no\"}" http://localhost:5000/predict
 
@@ -318,6 +317,8 @@ kubectl port-forward service/house-price-api 8080:80
 
 Step 12: Access curl
 ```ruby
-curl -X POST -H "Content-Type: application/json" -d '{"area":1000,"bedrooms":2,"stories":1,"mainroad":"yes","basement":"no"}' http://localhost:8080/predict
+
+curl -X POST -H "Content-Type: application/json" -d "{\"area\":1000,\"bedrooms\":2,\"stories\":1,\"mainroad\":\"yes\",\"basement\":\"no\"}" http://localhost:8080/predict
+
 ```
 </p>
